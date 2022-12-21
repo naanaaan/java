@@ -8,7 +8,7 @@ public class C07Date {
 		LocalDate date = LocalDate.of(2025, 1, 1);
 		LocalTime time = LocalTime.of(18, 7, 13);
 		
-		System.out.println(date);
+		System.out.println(date.toString()); //String타입으로 변환
 		System.out.println(time);
 	}
 }
