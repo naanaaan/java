@@ -5,19 +5,19 @@ import java.util.Scanner;
 public class Grade {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
-		
+		String grade = null ;
 		System.out.printf("점수: ");
 		int gradeinput = sc.nextInt();
-			
-		if( gradeinput >= 90) {
-			String grade = (gradeinput >= 98 || gradeinput < 93) ? "A+" : "A-";
-		}else if( gradeinput >= 80) {
-			
-		}else {
-			
-		}
 		
+	
+		if( gradeinput >= 90) grade = "A";
+		else if( gradeinput >= 80) grade ="B";
+		else grade = "C";
+		
+		if( gradeinput%10 >= 8 || gradeinput == 100) grade += "+"; 
+		else if( gradeinput%10 < 3 && gradeinput >= 80) grade += "-";
+		
+		System.out.println(grade);
 	}
 }
 /*
