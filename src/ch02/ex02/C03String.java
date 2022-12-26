@@ -12,6 +12,8 @@ public class C03String {
 		
 		String sumStr = "" + sum; // String은 하나라도 문자이면 타입이 문자로 변함 //class타입 변수는 4byte
 		System.out.println(sumStr);
+		
+		int i = Integer.parseInt(sumStr);
 	}
 
 }
