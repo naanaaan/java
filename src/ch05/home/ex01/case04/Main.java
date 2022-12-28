@@ -15,14 +15,14 @@ public class Main {
 			do {
 			System.out.print("이름: ");
 			inputName = sc.nextLine();
-			user.setUserName(inputName, true);
-			isGood = inputName.matches("^[a-zA-Z]*$");
-			if(!isGood) System.out.println("영어만 입력가능합니다. 다시 입력하세요.");
+			user.setUserName(inputName);
+			isGood = inputName.matches("[a-zA-Z가-힟]+");
+			if(!isGood) System.out.println("잘못입력하셨습니다.");
 			}while(!isGood);
 			do {
 				System.out.print("나이: ");
 				inputAge = sc.nextLine();
-				user.setage(inputAge, true);
+				user.setage(inputAge);
 				isGood = inputAge.matches("[0-9]+");
 				if(!isGood) System.out.println("다시 입력해주세요.");
 			} while (!isGood);

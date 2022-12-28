@@ -5,23 +5,20 @@ import java.time.LocalDate;
 public class User {
 	private String userName;
 	private String age;
-	LocalDate joinDate;
-	boolean run1;
-	boolean run2;
+	private LocalDate joinDate;
 	
 	
-	public void setUserName(String userName, boolean run1) {
+	public void setUserName(String userName) {
 		this.userName = userName;
-		this.run1 = run1;
+		
 	}
 	
 	public String getuserName() {
 		return this.userName;
 	}
 	
-	public void setage(String age, boolean run2) {
+	public void setage(String age) {
 		this.age = age;
-		this.run2 = run2;
 	}
 	
 	public String getage() {
@@ -29,7 +26,7 @@ public class User {
 	}
 	
 	public void setjoinDate() {
-		if(this.run1 == true && this.run2 == true) this.joinDate = LocalDate.now();
+		this.joinDate = LocalDate.now();
 	
 	}
 	
