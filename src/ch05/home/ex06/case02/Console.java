@@ -29,7 +29,7 @@ public class Console {
 	public static int inNum(String msg) {
 		Console.inMsg(msg);
 		String inputNum = sc.nextLine();
-		if(inputNum.matches("[1-9]+")) return Integer.parseInt(inputNum);
+		if(inputNum.matches("[0-9]+") && inputNum != "0") return Integer.parseInt(inputNum);
 		else {
 			Console.err("자연수가 아닙니다.\n");
 			return inNum(msg);
