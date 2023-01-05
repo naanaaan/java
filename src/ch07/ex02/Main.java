@@ -12,9 +12,10 @@ public class Main {
 		UserDao userDao = new UserDaoImpl();
 		UserService userService = new UserServiceImpl(userDao);
 		UserIo userIo = new UserIo(userService);
-		
+			
 		Console.info("start.");
 		userIo.play();
 		Console.info("end.");
+		Console.info(userDao.selectUser());
 	}
 }

@@ -2,7 +2,7 @@ package ch07.ex03.dao;
 
 import ch07.ex03.domain.User;
 
-public class UserDaoInpl implements UserDao {
+public class UserDaoImpl implements UserDao {
 	private User user;
 
 	@Override
