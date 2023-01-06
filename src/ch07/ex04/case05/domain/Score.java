@@ -29,6 +29,11 @@ public class Score {
 		this.sum = sum;
 	}
 
+	public int getSum() {
+		return this.sum;
+	}
+	
+	
 	public void setAvg(int avg) {
 		this.avg = avg;
 	}
