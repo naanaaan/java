@@ -3,19 +3,18 @@ package com.my.hr.domain;
 import java.time.LocalDate;
 
 public class Worker {
-	private int workerId;
+	private final int workerId;
+	private static int IdStardNum = 1;
 	private String workerName;
 	private LocalDate joinDate;
 
 	public Worker(String workerName, LocalDate joinDate) {
+		this.workerId = Worker.IdStardNum++;
 		this.workerName = workerName;
 		this.joinDate = joinDate;
 	}
-
-	public int getWorkerId() {
-		return this.workerId;
-	}
-
+	
+	
 	public void setWorkerName(String workerName) {
 		this.workerName = workerName;
 	}

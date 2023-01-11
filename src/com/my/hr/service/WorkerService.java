@@ -7,7 +7,6 @@ import com.my.hr.domain.Worker;
 
 public interface WorkerService {
 	public List<Worker> getWorkers();
-	public int getWorkerId();
 	public void addWorker(Worker worker);
 	public void fixWorkerName(String workerName, int index);
 	public void fixWorkerJoinDate(LocalDate joinDate, int index);

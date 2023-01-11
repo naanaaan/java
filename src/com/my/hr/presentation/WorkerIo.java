@@ -1,6 +1,8 @@
 package com.my.hr.presentation;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.my.hr.domain.Worker;
 import com.my.hr.service.WorkerService;
@@ -23,10 +25,8 @@ public class WorkerIo {
 			}
 			case 1 -> {
 				Console.info("노동자 리스트\n");
-				if (workerService.getWorkers().size() == 0)
-					Console.err("노동자가 없습니다.");
-				else
-					Console.info(workerService.getWorkers() + "\n");
+				if (workerService.getWorkers().size() == 0) Console.err("노동자가 없습니다.");
+				else Console.info(workerService.getWorkers() + "\n");
 			}
 			case 2 -> {
 				String inWorkerName = Console.inName("노동자의 이름을 입력하세요.\n>");
@@ -37,12 +37,10 @@ public class WorkerIo {
 			case 3 -> {
 				Console.info("몇 번째를 수정하시겠습니까?\n>");
 				int indexNum = Console.inNum();
-				
 				String inWorkerName = Console.inName("노동자의 이름을 입력하세요.\n>");
 				LocalDate inJoinDate = Console.inJoinDate();
-					workerService.fixWorkerName(inWorkerName, indexNum);
-					workerService.fixWorkerJoinDate(inJoinDate, indexNum);
-				
+				workerService.fixWorkerName(inWorkerName, indexNum);
+				workerService.fixWorkerJoinDate(inJoinDate, indexNum);	
 			}
 			case 4 -> {
 				Console.info("몇 번째를 삭제하시겠습니까?\n>");

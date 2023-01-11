@@ -10,5 +10,6 @@ public class WorkerDaoTest {
 	public static void main(String[] args) {
 		WorkerDao workerDao = new WorkerDaoImpl(new ArrayList<Worker>());
 		
+		
 	}
 }

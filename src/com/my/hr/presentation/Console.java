@@ -2,6 +2,7 @@ package com.my.hr.presentation;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public interface Console {
@@ -9,11 +10,7 @@ public interface Console {
 	
 	public static void info(Object obj) {
 		System.out.print(obj);
-	}
-	
-	public static void inMsg(String msg) {
-		System.out.println(msg + ": ");
-	}
+	} 
 	
 	public static int inNum() {
 		int input = 0;
@@ -49,29 +46,52 @@ public interface Console {
 		boolean isGood = false;
 		do {
 			do {
-				Console.info("입사년도를 입력하세요.\n>");
-				year = sc.nextInt(); sc.nextLine();
+				try {
+					isGood = false;
+					Console.info("입사년도를 입력하세요.\n>");
+					year = sc.nextInt(); sc.nextLine();
+				} catch (InputMismatchException e) {
+					Console.err("숫자만 입력가능합니다.");
+					sc.nextLine();
+					continue;
+				}
 				isGood = 0 <= year && year <= 9999;
-				if(!isGood) Console.err("올바른 숫자를 입력해주세요.");
-			}while(!isGood);
-			
+				if (!isGood) Console.err("4자리까지 입력가능합니다.");
+			} while (!isGood);
+
 			do {
-				Console.info("입사월을 입력하세요.\n>");
-				month = sc.nextInt(); sc.nextLine();
+				try {
+					isGood = false;
+					Console.info("입사월을 입력하세요.\n>");
+					month = sc.nextInt(); sc.nextLine();
+				} catch (InputMismatchException e) {
+					Console.err("숫자만 입력가능합니다.");
+					sc.nextLine();
+					continue;
+				}
 				isGood = 1 <= month && month <= 12;
-				if(!isGood) Console.err("1에서 12까지의 숫자만 입력하세요.");
-			}while(!isGood);
-			
+				if (!isGood) Console.err("1에서 12까지의 숫자만 입력하세요.");
+			} while (!isGood);
+
 			do {
-				Console.info("입사일을 입력하세요.\n>");
-				day = sc.nextInt(); sc.nextLine();
+				try {
+					isGood = false;
+					Console.info("입사일을 입력하세요.\n>");
+					day = sc.nextInt(); sc.nextLine();
+				} catch (InputMismatchException e) {
+					Console.err("숫자만 입력가능합니다.");
+					sc.nextLine();
+					continue;
+				}
 				isGood = 1 <= day && day <= 31;
-				if(!isGood) Console.err("1부터 31까지의 숫자만 입력하세요.");
-			}while(!isGood);
+				if (!isGood) Console.err("1부터 31까지의 숫자만 입력하세요.");
+			} while (!isGood);
+
 			try {
 				joinDate = LocalDate.of(year, month, day);
-			}catch(DateTimeException e) {
+			} catch (DateTimeException e) {
 				Console.err(month + "월에는 " + day + "가 없습니다.");
+				Console.info("다시 입력해주세요.\n");
 				isGood = false;
 			}
 		}while(!isGood);

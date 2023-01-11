@@ -15,6 +15,6 @@ public class WorkerIoTest {
 		WorkerService workerService = new WorkerServiceImpl(workerDao);
 		WorkerIo workerIo = new WorkerIo(workerService);
 		workerIo.play();
-	
+		
 	}
 }

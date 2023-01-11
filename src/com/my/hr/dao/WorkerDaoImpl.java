@@ -19,12 +19,7 @@ public class WorkerDaoImpl implements WorkerDao {
 	public List<Worker> selectWorkers() {
 		return this.workers;
 	}
-
-	@Override
-	public int selectWorkerId() {
-		return this.workers.get(sc.nextInt() - 1).getWorkerId();
-	}
-
+	
 	@Override
 	public void insertWorker(Worker worker) {
 		this.workers.add(worker);

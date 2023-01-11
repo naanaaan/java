@@ -19,11 +19,6 @@ public class WorkerServiceImpl implements WorkerService {
 	}
 
 	@Override
-	public int getWorkerId() {
-		return workerDao.selectWorkerId();
-	}
-
-	@Override
 	public void addWorker(Worker worker) {
 		this.workerDao.insertWorker(worker);
 	}
