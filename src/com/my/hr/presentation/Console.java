@@ -17,7 +17,9 @@ public interface Console {
 	
 	public static int inNum() {
 		int input = 0;
-		return input = sc.nextInt(); 
+		input = sc.nextInt();
+				sc.nextLine();
+		return input; 
 	}
 	
 	public static void err(String msg) {
