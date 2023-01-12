@@ -8,7 +8,7 @@ import com.my.hr.domain.Worker;
 public interface WorkerService {
 	public List<Worker> getWorkers();
 	public void addWorker(Worker worker);
-	public void fixWorkerName(String workerName, int index);
-	public void fixWorkerJoinDate(LocalDate joinDate, int index);
+	public void fixWorkerName(String workerName, int sequenceNum);
+	public void fixWorkerJoinDate(LocalDate joinDate, int sequenceNum);
 	public void delWorker();
 }

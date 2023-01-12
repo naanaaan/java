@@ -14,7 +14,6 @@ public class Worker {
 		this.joinDate = joinDate;
 	}
 	
-	
 	public void setWorkerName(String workerName) {
 		this.workerName = workerName;
 	}
@@ -25,6 +24,6 @@ public class Worker {
 
 	@Override
 	public String toString() {
-		return String.format("%d %s %s", this.workerId, this.workerName, this.joinDate);
+		return String.format("%-5d %s %9s%s", this.workerId, this.workerName,"" ,this.joinDate);
 	}
 }

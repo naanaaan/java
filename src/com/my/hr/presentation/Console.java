@@ -2,6 +2,7 @@ package com.my.hr.presentation;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -14,19 +15,15 @@ public interface Console {
 	
 	public static int inNum() {
 		int input = 0;
-		input = sc.nextInt();
-				sc.nextLine();
+		input = sc.nextInt(); sc.nextLine();
 		return input; 
-	}
-	
-	public static void err(String msg) {
-		System.out.println("ERROR] " + msg);
 	}
 	
 	public static String inName(String msg) {
 		String input = "";
 		boolean isGood1 = false;
 		boolean isGood2 = false;
+		
  		do {
 			Console.info(msg);
 			input = sc.nextLine().trim();
@@ -44,6 +41,7 @@ public interface Console {
 		int month = 0;
 		int day = 0;
 		boolean isGood = false;
+		
 		do {
 			do {
 				try {
@@ -95,18 +93,48 @@ public interface Console {
 				isGood = false;
 			}
 		}while(!isGood);
+		
+		return joinDate;
+	}
+	
+	public static LocalDate inJoinDate2() {
+		LocalDate joinDate = null;
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("YYYY-MM-DD");
+		String inputDate = "";
+		int year = 0;
+		int month = 0;
+		int day = 0;
+		boolean isGood = false;
+		
+		do {
+			
+				isGood = false;
+				Console.info("입사일양식은 YYYY-MM-DD입니다.\n");
+				Console.info("입사일을 입력하세요.\n>");
+				inputDate = sc.nextLine();
+				
+				isGood = true;
+			
+		}while(!isGood);
+		
 		return joinDate;
 	}
 	
 	public static int inMenuNum(String msg) {
 		String input = "";
 		boolean isGood = false;
+		
 		do {
 			Console.info(msg);
 			input = sc.nextLine().trim();
 			isGood = input.matches("[0-4]");
 			if(!isGood) Console.err("올바른 숫자를 입력해주세요.");
 		}while(!isGood);
+		
 		return Integer.parseInt(input);
+	}
+	
+	public static void err(String msg) {
+		System.out.println("ERROR] " + msg);
 	}
 }

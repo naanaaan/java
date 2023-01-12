@@ -24,13 +24,13 @@ public class WorkerServiceImpl implements WorkerService {
 	}
 
 	@Override
-	public void fixWorkerName(String workerName, int index) {
-		this.workerDao.updateWorkerName(workerName, index);
+	public void fixWorkerName(String workerName, int sequenceNum) {
+		this.workerDao.updateWorkerName(workerName, sequenceNum);
 	}
 
 	@Override
-	public void fixWorkerJoinDate(LocalDate joinDate, int index) {
-		this.workerDao.updateWorkerJoinDate(joinDate, index);
+	public void fixWorkerJoinDate(LocalDate joinDate, int sequenceNum) {
+		this.workerDao.updateWorkerJoinDate(joinDate, sequenceNum);
 	}
 
 	@Override

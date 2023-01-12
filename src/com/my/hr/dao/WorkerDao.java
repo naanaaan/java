@@ -9,7 +9,7 @@ import com.my.hr.domain.Worker;
 public interface WorkerDao {
 	public List<Worker> selectWorkers();
 	public void insertWorker(Worker worker);
-	public void updateWorkerName(String workerName, int index);
-	public void updateWorkerJoinDate(LocalDate joinDate, int index);
+	public void updateWorkerName(String workerName, int sequenceNum);
+	public void updateWorkerJoinDate(LocalDate joinDate, int sequenceNum);
 	public void deleteWorker();
 }

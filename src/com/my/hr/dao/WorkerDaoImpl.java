@@ -9,7 +9,7 @@ import com.my.hr.domain.Worker;
 public class WorkerDaoImpl implements WorkerDao {
 	private List<Worker> workers;
 	Scanner sc = new Scanner(System.in);
-	int index;
+	int sequenceNum;
 
 	public WorkerDaoImpl(List<Worker> workers) {
 		this.workers = workers;
@@ -26,13 +26,13 @@ public class WorkerDaoImpl implements WorkerDao {
 	}
 
 	@Override
-	public void updateWorkerName(String workerName, int index) {
-		this.workers.get(index - 1).setWorkerName(workerName);
+	public void updateWorkerName(String workerName, int sequenceNum) {
+		this.workers.get(sequenceNum - 1).setWorkerName(workerName);
 	}
 
 	@Override
-	public void updateWorkerJoinDate(LocalDate joinDate, int index) {
-		this.workers.get(index - 1).setJoinDate(joinDate);
+	public void updateWorkerJoinDate(LocalDate joinDate, int sequenceNum) {
+		this.workers.get(sequenceNum - 1).setJoinDate(joinDate);
 	}
 
 	@Override
